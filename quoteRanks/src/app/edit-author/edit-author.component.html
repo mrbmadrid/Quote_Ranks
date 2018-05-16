@@ -1,0 +1,6 @@
+<a href="/authors-app" [routerLink]="['/authors-app']">Home</a>
+<form (submit)='editAuthor()'>
+	<input type="text" name="name" [(ngModel)]="author.name">
+	<input type="submit" value="Edit Author">
+	<p *ngIf='success'>Your edit was successful.</p>
+</form>

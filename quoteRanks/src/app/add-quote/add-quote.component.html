@@ -1,0 +1,6 @@
+<a href="/authors-app" [routerLink]="['/authors-app']">Home</a>
+<form (submit)='addQuote()'>
+	<input type="text" name="quote" [(ngModel)]="quote">
+	<input type="submit" value="Add Quote">
+	<p *ngIf='success'>Your edit was successful.</p>
+</form>

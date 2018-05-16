@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-sm-12"><a href="/authors/add" [routerLink]="['/authors/add']">Add a quotable author</a></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<span class="purple">We have quotes by:</span>
+			<table>
+				<thead>
+					<tr>
+						<td>Author</td>
+						<td>Actions Available</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor='let author of authors'>
+						<td class="purple">{{author.name}}</td>
+						<td>
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="/quotes-app/{{author._id}}" [routerLink]="['/quotes-app/', author._id]"><button class="view_quotes">View Quotes</button></a>
+								</div>
+								<div class="col-sm-6">
+									<a href="/authors/edit/{{author._id}}" [routerLink]="['/authors/edit/', author._id]"><button class="edit_autor">Edit</button></a>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-sm-4"><a href="/authors-app" [routerLink]="['/authors-app']">Home</a> </div>
+	    <div class="col-sm-2"></div>
+	    <div class="col-sm-4"><a href="/authors-app" [routerLink]="['/quotes/add/', author._id]">Add a quote</a></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<span class="purple">Quotes by {{author.name}}</span>
+			<table>
+				<thead>
+					<tr>
+						<td>Quotes</td>
+						<td>Votes</td>
+						<td>Actions Available</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor='let quote of author.quotes; let i = index'>
+						<td class="purple">{{quote.quote}}</td>
+						<td class="purple">{{quote.votes}}</td>
+						<td>
+							<div class="row">
+								<div class="col-sm-4">
+									<button (click)='upVote(author._id, quote.quote)'>Vote Up</button>
+								</div>
+								<div class="col-sm-4">
+									<button (click)='downVote(author._id, quote.quote)'>Vote Down</button>
+								</div>
+								<div class="col-sm-4">
+									<button (click)='delete(author._id, quote.quote)'>Delete</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

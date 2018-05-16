@@ -1,0 +1,5 @@
+<a href="/authors-app" [routerLink]="['/authors-app']">Home</a>
+<form (submit)='addAuthor()'>
+	<input type="text" name="name" [(ngModel)]="name">
+	<input type="submit" value="Add Author">
+</form>
